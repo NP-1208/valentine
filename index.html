@@ -1,57 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Be My Valentine</title>
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg,#ff758c,#ff7eb3);
-    text-align:center;
-    color:white;
-}
-.container{
-    margin-top:100px;
-}
-h1{
-    font-size:45px;
-}
-button{
-    padding:15px 40px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    margin:20px;
-    cursor:pointer;
-    transition:0.3s;
-}
-.yes{
-    background:white;
-    color:#ff4d6d;
-}
-.yes:hover{
-    transform:scale(1.1);
-}
-.no{
-    background:#444;
-    color:white;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:'Segoe UI',sans-serif;
+      background:linear-gradient(135deg,#ff758c,#ff7eb3);
+      text-align:center;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 24px 16px;
+    }
+
+    .container{
+      width: 100%;
+      max-width: 900px;
+      padding: 24px 16px;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.15;
+      margin: 0 0 18px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap: 14px;
+      justify-content:center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    button{
+      padding:14px 28px;
+      font-size:16px;
+      border:none;
+      border-radius:30px;
+      cursor:pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      min-width: 160px;
+      max-width: 260px;
+      width: 100%;
+    }
+
+    .yes{
+      background:white;
+      color:#ff4d6d;
+      font-weight: 700;
+    }
+
+    .yes:hover{
+      transform:scale(1.04);
+    }
+
+    .no{
+      background:#444;
+      color:white;
+      opacity: 0.95;
+    }
+
+    .no:hover{
+      transform:scale(1.02);
+      opacity: 1;
+    }
+
+    @media (min-width: 520px){
+      button{
+        width: auto;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
     <h1>Will You Be My Valentine? ❤️</h1>
-    <button class="yes" onclick="goNext()">YES 💖</button>
-    <button class="no" onclick="alert('Only YES allowed 😜')">NO</button>
-</div>
 
-<script>
-function goNext(){
-    window.location.href = "plan.html";
-}
-</script>
+    <div class="btn-row">
+      <button class="yes" onclick="goNext()">YES 💖</button>
+      <button class="no" onclick="alert('Only YES allowed 😜')">NO</button>
+    </div>
+  </div>
+
+  <script>
+    function goNext(){
+      window.location.href = "plan.html";
+    }
+  </script>
 
 </body>
 </html>
