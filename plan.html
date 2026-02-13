@@ -1,74 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Our Dinner Date</title>
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg,#1f1c2c,#2a2a72);
-    color:white;
-    text-align:center;
-}
-.container{
-    padding:40px 20px;
-    max-width:900px;
-    margin:auto;
-}
-h1{
-    font-size:42px;
-    color:#ff4d6d;
-}
-.dinner-card{
-    margin-top:40px;
-    background:#ffffff15;
-    padding:30px;
-    border-radius:25px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-img{
-    width:300px;
-    border-radius:15px;
-    margin:15px 0;
-}
-.details{
-    font-size:20px;
-    margin-top:10px;
-}
-.love{
-    margin-top:30px;
-    font-size:24px;
-    color:gold;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Dinner Date</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:'Segoe UI',sans-serif;
+      background:linear-gradient(135deg,#1f1c2c,#2a2a72);
+      color:white;
+      text-align:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 24px 16px;
+    }
+
+    .container{
+      width: 100%;
+      max-width: 900px;
+      padding: 18px 12px;
+      margin:auto;
+    }
+
+    h1{
+      font-size: clamp(26px, 5vw, 44px);
+      color:#ff4d6d;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .dinner-card{
+      margin-top: 18px;
+      background:#ffffff15;
+      padding: 22px 18px;
+      border-radius: 22px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h2{
+      margin: 0 0 14px;
+      font-size: clamp(18px, 3.5vw, 26px);
+    }
+
+    img{
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 15px;
+      margin: 12px auto;
+      display:block;
+    }
+
+    .details{
+      font-size: clamp(16px, 2.8vw, 20px);
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .love{
+      margin-top: 18px;
+      font-size: clamp(18px, 3vw, 24px);
+      color: gold;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
+    <h1>Our Special Dinner Date ❤️</h1>
 
-<h1>Our Special Dinner Date ❤️</h1>
+    <div class="dinner-card">
+      <h2>🍽 Romantic Dinner Just For Us</h2>
 
-<div class="dinner-card">
+      <!-- If you want an image, uncomment and put your image filename -->
+      <!-- <img src="your-image.jpg" alt="Dinner Date"> -->
 
-    <h2>🍽 Romantic Dinner Just For Us</h2>
-
-
-
-    <div class="details">
+      <div class="details">
         📅 14 February <br>
         ⏰ 8:30 PM <br>
         📍 Atrangi – The Modern Indian Kitchen
-    </div>
+      </div>
 
-    <div class="love">
+      <div class="love">
         I can’t wait to spend this beautiful evening with you 💖
+      </div>
     </div>
-
-</div>
-
-</div>
+  </div>
 
 </body>
 </html>
