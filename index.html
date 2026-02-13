@@ -1,178 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Valentine 💖</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine 💖</title>
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 25px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-      width: 90%;
-      max-width: 400px;
-      animation: pop 0.8s ease;
-    }
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 420px;
+  animation: pop 0.6s ease;
+}
 
-    @keyframes pop {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 
-    h1 { color: #e63946; }
-    p { color: #555; font-size: 1rem; }
+h1 { color: #e63946; }
+p { color: #555; }
 
-    button {
-      padding: 14px 25px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      margin: 12px 6px;
-      transition: transform 0.2s;
-    }
+button {
+  padding: 14px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px 6px;
+  transition: 0.3s;
+}
 
-    button:hover { transform: scale(1.05); }
+button:hover { transform: scale(1.05); }
 
-    #yesBtn {
-      background-color: #e63946;
-      color: white;
-    }
+#yesBtn {
+  background: #e63946;
+  color: white;
+}
 
-    #noBtn {
-      background-color: #adb5bd;
-      position: absolute;
-    }
+#noBtn {
+  background: #adb5bd;
+  position: absolute;
+}
 
-    .options a { text-decoration: none; }
+.dinnerBtn {
+  background: linear-gradient(45deg,#ff4d6d,#ff758c);
+  color: white;
+  width: 100%;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
-    .options button {
-      width: 100%;
-      background-color: #ff6f91;
-      color: white;
-    }
+.surpriseBtn {
+  background: #ff6f91;
+  color: white;
+  width: 100%;
+}
 
-    .heart {
-      position: absolute;
-      bottom: -20px;
-      font-size: 22px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.8;
-    }
+.backBtn {
+  background: #ccc;
+  width: 100%;
+}
 
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(-120vh); opacity: 0; }
-    }
-  </style>
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 22px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+</style>
 </head>
 <body>
 
-  <!-- BACKGROUND MUSIC -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
-  <!-- PAGE 1 -->
-  <div class="card" id="page1">
-    <h1>Hey Aakash Purohit 💘</h1>
-    <p>
-      I’ve been holding this question in my heart for a while…  
-      <br><br>
-      And now I finally have the courage to ask 😳
-    </p>
-    <h1>Will you be my Valentine?</h1>
+<!-- PAGE 1 -->
+<div class="card" id="page1">
+  <h1>Hey Aakash Purohit 💘</h1>
+  <p>I have something special planned for us...</p>
+  <h1>Will you be my Valentine?</h1>
+  <button id="yesBtn" onclick="showPage2()">Yes 💖</button>
+  <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
+</div>
 
-    <button id="yesBtn" onclick="showPage2()">Yes 💖</button>
-    <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
-  </div>
+<!-- PAGE 2 -->
+<div class="card" id="page2" style="display:none;">
+  <h1>Our Romantic Dinner Date 🍷✨</h1>
+  <p>
+    14 February at 8:30 PM  
+    <br><br>
+    Atrangi – The Modern Indian Kitchen 💕
+  </p>
 
-  <!-- PAGE 2 -->
-  <div class="card" id="page2" style="display:none;">
-    <h1>YAYYY 😍</h1>
-    <p>
-      You just made my heart do a happy dance 💃🕺  
-      <br><br>
-      Now tell me, Aakash…  
-      how should we celebrate our Valentine’s Day? 💕
-    </p>
+  <!-- PUT YOUR ZOMATO BOOKING LINK BELOW -->
+  <a href="PASTE_YOUR_ZOMATO_LINK_HERE" target="_blank">
+    <button class="dinnerBtn">🍽️ View Dinner Booking</button>
+  </a>
 
-    <div class="options">
-      <a href="https://in.bookmyshow.com/" target="_blank">
-        <button>🎬 Movie Date</button>
-      </a>
+  <button class="surpriseBtn" onclick="showPage3()">🎁 Surprise Me</button>
+  <button class="backBtn" onclick="goBack()">⬅ Go Back</button>
+</div>
 
-      <a href="https://www.opentable.com/" target="_blank">
-        <button>🍽️ Romantic Dinner</button>
-      </a>
+<!-- PAGE 3 -->
+<div class="card" id="page3" style="display:none;">
+  <h1>Surprise! 💖</h1>
+  <p>
+    The real surprise is not the dinner…  
+    It’s spending the evening with you.  
+    <br><br>
+    I love you more than words can explain.
+  </p>
 
-      <button onclick="showPage3()">🎁 Surprise Me</button>
-    </div>
-  </div>
+  <button class="dinnerBtn" onclick="showPage2()">🍷 Back to Our Dinner Plan</button>
+</div>
 
-  <!-- PAGE 3 -->
-  <div class="card" id="page3" style="display:none;">
-    <h1>I Love You ❤️</h1>
-    <p>
-      Aakash, this little website is just a tiny reflection  
-      of how big my feelings for you are.  
-      <br><br>
-      Thank you for being my safe place,  
-      my biggest smile, and my favorite person 💞  
-      <br><br>
-      I can’t wait to create countless memories with you.
-    </p>
+<script>
+function moveNo() {
+  const noBtn = document.getElementById("noBtn");
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 60);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
 
-    <h2>Forever yours,</h2>
-    <h2>Nikita Purohit 💖</h2>
-  </div>
+function showPage2() {
+  page1.style.display = "none";
+  page2.style.display = "block";
+  page3.style.display = "none";
+}
 
-  <script>
-    function moveNo() {
-      const noBtn = document.getElementById("noBtn");
-      const x = Math.random() * (window.innerWidth - 120);
-      const y = Math.random() * (window.innerHeight - 60);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    }
+function showPage3() {
+  page2.style.display = "none";
+  page3.style.display = "block";
+}
 
-    function showPage2() {
-      page1.style.display = "none";
-      page2.style.display = "block";
-    }
+function goBack() {
+  page2.style.display = "none";
+  page1.style.display = "block";
+}
 
-    function showPage3() {
-      page2.style.display = "none";
-      page3.style.display = "block";
-    }
-
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "💖";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
-      document.body.appendChild(heart);
-
-      setTimeout(() => heart.remove(), 7000);
-    }, 400);
-  </script>
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
 
 </body>
 </html>
