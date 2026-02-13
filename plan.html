@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Our Plan</title>
+<title>Our Dinner Date</title>
 <style>
 body{
     margin:0;
@@ -10,41 +10,48 @@ body{
     background:linear-gradient(135deg,#1f1c2c,#2a2a72);
     color:white;
     text-align:center;
+    overflow-x:hidden;
 }
 .container{
-    padding:40px;
+    padding:40px 20px;
 }
 h1{
-    font-size:40px;
+    font-size:45px;
     color:#ff4d6d;
 }
-.option-box{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin-top:50px;
-    flex-wrap:wrap;
-}
-.card{
-    background:#ffffff10;
-    padding:30px;
-    border-radius:20px;
-    width:250px;
-    cursor:pointer;
-    transition:0.4s;
-    backdrop-filter:blur(10px);
-}
-.card:hover{
-    transform:translateY(-10px);
-    background:#ff4d6d;
-}
-.hidden{
-    display:none;
+h2{
+    margin-top:20px;
 }
 img{
-    width:280px;
-    border-radius:15px;
-    margin-top:20px;
+    width:300px;
+    border-radius:20px;
+    margin:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+.love-message{
+    margin-top:30px;
+    font-size:24px;
+    color:gold;
+}
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+button:hover{
+    transform:scale(1.1);
+}
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    pointer-events:none;
 }
 </style>
 </head>
@@ -52,46 +59,54 @@ img{
 
 <div class="container">
 
-<h1>Choose Our Special Plan 💖</h1>
+<h1>Our Special Dinner Date ❤️</h1>
 
-<div class="option-box">
+<h2>Table Booked Just For Us ✨</h2>
 
-    <div class="card" onclick="showDinner()">
-        <h2>🍽 Dinner Date</h2>
-        <p>Romantic candle light dinner</p>
-    </div>
+<img src="https://drive.google.com/uc?export=view&id=1q6sbpeO6FqemIlwz8qpLByBcI1ClIdJJ">
+<br>
+<img src="https://drive.google.com/uc?export=view&id=17yaSoLmTP-1GrvvteoOaSnY2YX3ZT3aG">
 
-    <div class="card" onclick="showSurprise()">
-        <h2>🎁 Surprise Me</h2>
-        <p>Click to unlock magic</p>
-    </div>
+<div class="love-message">
+See you at 8:30 PM 💕<br>
+I can't wait to spend this beautiful evening with you ❤️
+</div>
+
+<button onclick="startConfetti()">I Love You 💖</button>
 
 </div>
 
-<div id="dinner" class="hidden">
-    <h2>Our Special Dinner ❤️</h2>
-    <img src="https://drive.google.com/uc?export=view&id=1q6sbpeO6FqemIlwz8qpLByBcI1ClIdJJ">
-    <img src="https://drive.google.com/uc?export=view&id=17yaSoLmTP-1GrvvteoOaSnY2YX3ZT3aG">
-    <h3>See you at 8:30 PM 💕</h3>
-</div>
-
-<div id="surprise" class="hidden">
-    <h2>🎉 Surprise!!!</h2>
-    <p>You are the best thing in my life ❤️</p>
-    <p>Get ready for the most romantic evening ever ✨</p>
-</div>
-
-</div>
+<canvas id="confetti"></canvas>
 
 <script>
-function showDinner(){
-    document.getElementById("dinner").style.display="block";
-    document.getElementById("surprise").style.display="none";
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let pieces = [];
+
+function startConfetti(){
+    for(let i=0;i<200;i++){
+        pieces.push({
+            x:Math.random()*canvas.width,
+            y:Math.random()*canvas.height-canvas.height,
+            size:Math.random()*8+4,
+            speed:Math.random()*3+2,
+            color:`hsl(${Math.random()*360},100%,50%)`
+        });
+    }
+    requestAnimationFrame(updateConfetti);
 }
 
-function showSurprise(){
-    document.getElementById("surprise").style.display="block";
-    document.getElementById("dinner").style.display="none";
+function updateConfetti(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+        p.y+=p.speed;
+        ctx.fillStyle=p.color;
+        ctx.fillRect(p.x,p.y,p.size,p.size);
+    });
+    requestAnimationFrame(updateConfetti);
 }
 </script>
 
