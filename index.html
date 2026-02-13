@@ -1,177 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Valentine 💖</title>
-
+<title>Dinner Date</title>
 <style>
-* { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to right, #1e1e2f, #2c2c54);
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+    }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  margin: 0;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    .container {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: auto;
+    }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  width: 90%;
-  max-width: 420px;
-  animation: pop 0.6s ease;
-}
+    h1 {
+        font-size: 40px;
+        color: #ff4d6d;
+    }
 
-@keyframes pop {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+    .photo {
+        margin-top: 20px;
+    }
 
-h1 { color: #e63946; }
-p { color: #555; }
+    .photo img {
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
 
-button {
-  padding: 14px 25px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  margin: 10px 6px;
-  transition: 0.3s;
-}
+    .booking {
+        margin-top: 30px;
+    }
 
-button:hover { transform: scale(1.05); }
+    .booking img {
+        width: 320px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    }
 
-#yesBtn {
-  background: #e63946;
-  color: white;
-}
+    .question {
+        margin-top: 40px;
+        font-size: 28px;
+    }
 
-#noBtn {
-  background: #adb5bd;
-  position: absolute;
-}
+    .buttons {
+        margin-top: 20px;
+    }
 
-.dinnerBtn {
-  background: linear-gradient(45deg,#ff4d6d,#ff758c);
-  color: white;
-  width: 100%;
-  font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+    button {
+        padding: 15px 40px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        margin: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-.surpriseBtn {
-  background: #ff6f91;
-  color: white;
-  width: 100%;
-}
+    .yes {
+        background: #ff4d6d;
+        color: white;
+    }
 
-.backBtn {
-  background: #ccc;
-  width: 100%;
-}
+    .yes:hover {
+        background: #ff1e4d;
+        transform: scale(1.1);
+    }
 
-.heart {
-  position: absolute;
-  bottom: -20px;
-  font-size: 22px;
-  animation: floatUp 6s linear infinite;
-}
+    .no {
+        background: #555;
+        color: white;
+    }
 
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-120vh); opacity: 0; }
-}
+    #message {
+        margin-top: 30px;
+        font-size: 26px;
+        color: #ffd700;
+        display: none;
+    }
+
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
 </style>
 </head>
 <body>
 
-<audio autoplay loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
+<div class="container">
 
-<!-- PAGE 1 -->
-<div class="card" id="page1">
-  <h1>Hey Aakash Purohit 💘</h1>
-  <p>I have something special planned for us...</p>
-  <h1>Will you be my Valentine?</h1>
-  <button id="yesBtn" onclick="showPage2()">Yes 💖</button>
-  <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
+    <h1>Our Special Dinner Date ❤️</h1>
+
+    <!-- Your Couple Photo -->
+<div class="photo">
+    <img src="https://drive.google.com/uc?export=view&id=1q6sbpeO6FqemIlwz8qpLByBcI1ClIdJJ" alt="Our Photo">
 </div>
 
-<!-- PAGE 2 -->
-<div class="card" id="page2" style="display:none;">
-  <h1>Our Romantic Dinner Date 🍷✨</h1>
-  <p>
-    14 February at 8:30 PM  
-    <br><br>
-    Atrangi – The Modern Indian Kitchen 💕
-  </p>
-
-  <!-- PUT YOUR ZOMATO BOOKING LINK BELOW -->
-  <a href="PASTE_YOUR_ZOMATO_LINK_HERE" target="_blank">
-    <button class="dinnerBtn">🍽️ View Dinner Booking</button>
-  </a>
-
-  <button class="surpriseBtn" onclick="showPage3()">🎁 Surprise Me</button>
-  <button class="backBtn" onclick="goBack()">⬅ Go Back</button>
+<!-- Restaurant Booking Screenshot -->
+<div class="booking">
+    <h2>Table Booked Just For Us ✨</h2>
+    <img src="https://drive.google.com/uc?export=view&id=17yaSoLmTP-1GrvvteoOaSnY2YX3ZT3aG" alt="Booking Confirmation">
 </div>
 
-<!-- PAGE 3 -->
-<div class="card" id="page3" style="display:none;">
-  <h1>Surprise! 💖</h1>
-  <p>
-    The real surprise is not the dinner…  
-    It’s spending the evening with you.  
-    <br><br>
-    I love you more than words can explain.
-  </p>
 
-  <button class="dinnerBtn" onclick="showPage2()">🍷 Back to Our Dinner Plan</button>
+    <div class="question">
+        Will you go on this romantic dinner date with me? 💖
+    </div>
+
+    <div class="buttons">
+        <button class="yes" onclick="sayYes()">YES</button>
+        <button class="no" onclick="moveNo()">NO</button>
+    </div>
+
+    <div id="message">
+        🎉 YAYYY!! I Love You ❤️ See you at dinner! 💑
+    </div>
+
 </div>
+
+<canvas id="confetti"></canvas>
 
 <script>
-function moveNo() {
-  const noBtn = document.getElementById("noBtn");
-  const x = Math.random() * (window.innerWidth - 120);
-  const y = Math.random() * (window.innerHeight - 60);
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
-}
+    function sayYes() {
+        document.getElementById("message").style.display = "block";
+        startConfetti();
+    }
 
-function showPage2() {
-  page1.style.display = "none";
-  page2.style.display = "block";
-  page3.style.display = "none";
-}
+    function moveNo() {
+        alert("No option disabled 😜 Only YES works!");
+    }
 
-function showPage3() {
-  page2.style.display = "none";
-  page3.style.display = "block";
-}
+    // Simple Confetti Effect
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-function goBack() {
-  page2.style.display = "none";
-  page1.style.display = "block";
-}
+    let pieces = [];
 
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 500);
+    function startConfetti() {
+        for (let i = 0; i < 200; i++) {
+            pieces.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                size: Math.random() * 10 + 5,
+                speed: Math.random() * 3 + 2,
+                color: `hsl(${Math.random() * 360}, 100%, 50%)`
+            });
+        }
+        requestAnimationFrame(updateConfetti);
+    }
+
+    function updateConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        pieces.forEach(p => {
+            p.y += p.speed;
+            ctx.fillStyle = p.color;
+            ctx.fillRect(p.x, p.y, p.size, p.size);
+        });
+
+        requestAnimationFrame(updateConfetti);
+    }
 </script>
 
 </body>
 </html>
+
