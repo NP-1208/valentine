@@ -10,48 +10,37 @@ body{
     background:linear-gradient(135deg,#1f1c2c,#2a2a72);
     color:white;
     text-align:center;
-    overflow-x:hidden;
 }
 .container{
     padding:40px 20px;
+    max-width:900px;
+    margin:auto;
 }
 h1{
-    font-size:45px;
+    font-size:42px;
     color:#ff4d6d;
 }
-h2{
-    margin-top:20px;
+.dinner-card{
+    margin-top:40px;
+    background:#ffffff15;
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 img{
     width:300px;
-    border-radius:20px;
-    margin:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    border-radius:15px;
+    margin:15px 0;
 }
-.love-message{
+.details{
+    font-size:20px;
+    margin-top:10px;
+}
+.love{
     margin-top:30px;
     font-size:24px;
     color:gold;
-}
-button{
-    margin-top:30px;
-    padding:15px 35px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    background:#ff4d6d;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-}
-button:hover{
-    transform:scale(1.1);
-}
-canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    pointer-events:none;
 }
 </style>
 </head>
@@ -61,54 +50,29 @@ canvas{
 
 <h1>Our Special Dinner Date ❤️</h1>
 
-<h2>Table Booked Just For Us ✨</h2>
+<div class="dinner-card">
 
-<img src="https://drive.google.com/uc?export=view&id=1q6sbpeO6FqemIlwz8qpLByBcI1ClIdJJ">
-<br>
-<img src="https://drive.google.com/uc?export=view&id=17yaSoLmTP-1GrvvteoOaSnY2YX3ZT3aG">
+    <h2>🍽 Romantic Dinner Just For Us</h2>
 
-<div class="love-message">
-See you at 8:30 PM 💕<br>
-I can't wait to spend this beautiful evening with you ❤️
+    <!-- Your Photo -->
+    <img src="https://drive.google.com/uc?export=view&id=1q6sbpeO6FqemIlwz8qpLByBcI1ClIdJJ">
+
+    <!-- Booking Screenshot -->
+    <img src="https://drive.google.com/uc?export=view&id=17yaSoLmTP-1GrvvteoOaSnY2YX3ZT3aG">
+
+    <div class="details">
+        📅 14 February <br>
+        ⏰ 8:30 PM <br>
+        📍 Atrangi – The Modern Indian Kitchen
+    </div>
+
+    <div class="love">
+        I can’t wait to spend this beautiful evening with you 💖
+    </div>
+
 </div>
 
-<button onclick="startConfetti()">I Love You 💖</button>
-
 </div>
-
-<canvas id="confetti"></canvas>
-
-<script>
-const canvas = document.getElementById("confetti");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let pieces = [];
-
-function startConfetti(){
-    for(let i=0;i<200;i++){
-        pieces.push({
-            x:Math.random()*canvas.width,
-            y:Math.random()*canvas.height-canvas.height,
-            size:Math.random()*8+4,
-            speed:Math.random()*3+2,
-            color:`hsl(${Math.random()*360},100%,50%)`
-        });
-    }
-    requestAnimationFrame(updateConfetti);
-}
-
-function updateConfetti(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    pieces.forEach(p=>{
-        p.y+=p.speed;
-        ctx.fillStyle=p.color;
-        ctx.fillRect(p.x,p.y,p.size,p.size);
-    });
-    requestAnimationFrame(updateConfetti);
-}
-</script>
 
 </body>
 </html>
