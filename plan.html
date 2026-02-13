@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Plan</title>
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#1f1c2c,#2a2a72);
+    color:white;
+    text-align:center;
+}
+.container{
+    padding:40px;
+}
+h1{
+    font-size:40px;
+    color:#ff4d6d;
+}
+.option-box{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:50px;
+    flex-wrap:wrap;
+}
+.card{
+    background:#ffffff10;
+    padding:30px;
+    border-radius:20px;
+    width:250px;
+    cursor:pointer;
+    transition:0.4s;
+    backdrop-filter:blur(10px);
+}
+.card:hover{
+    transform:translateY(-10px);
+    background:#ff4d6d;
+}
+.hidden{
+    display:none;
+}
+img{
+    width:280px;
+    border-radius:15px;
+    margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>Choose Our Special Plan 💖</h1>
+
+<div class="option-box">
+
+    <div class="card" onclick="showDinner()">
+        <h2>🍽 Dinner Date</h2>
+        <p>Romantic candle light dinner</p>
+    </div>
+
+    <div class="card" onclick="showSurprise()">
+        <h2>🎁 Surprise Me</h2>
+        <p>Click to unlock magic</p>
+    </div>
+
+</div>
+
+<div id="dinner" class="hidden">
+    <h2>Our Special Dinner ❤️</h2>
+    <img src="https://drive.google.com/uc?export=view&id=1q6sbpeO6FqemIlwz8qpLByBcI1ClIdJJ">
+    <img src="https://drive.google.com/uc?export=view&id=17yaSoLmTP-1GrvvteoOaSnY2YX3ZT3aG">
+    <h3>See you at 8:30 PM 💕</h3>
+</div>
+
+<div id="surprise" class="hidden">
+    <h2>🎉 Surprise!!!</h2>
+    <p>You are the best thing in my life ❤️</p>
+    <p>Get ready for the most romantic evening ever ✨</p>
+</div>
+
+</div>
+
+<script>
+function showDinner(){
+    document.getElementById("dinner").style.display="block";
+    document.getElementById("surprise").style.display="none";
+}
+
+function showSurprise(){
+    document.getElementById("surprise").style.display="block";
+    document.getElementById("dinner").style.display="none";
+}
+</script>
+
+</body>
+</html>
