@@ -2,176 +2,56 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dinner Date</title>
+<title>Be My Valentine</title>
 <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to right, #1e1e2f, #2c2c54);
-        color: white;
-        text-align: center;
-        overflow-x: hidden;
-    }
-
-    .container {
-        padding: 40px 20px;
-        max-width: 900px;
-        margin: auto;
-    }
-
-    h1 {
-        font-size: 40px;
-        color: #ff4d6d;
-    }
-
-    .photo {
-        margin-top: 20px;
-    }
-
-    .photo img {
-        width: 300px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .booking {
-        margin-top: 30px;
-    }
-
-    .booking img {
-        width: 320px;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-    }
-
-    .question {
-        margin-top: 40px;
-        font-size: 28px;
-    }
-
-    .buttons {
-        margin-top: 20px;
-    }
-
-    button {
-        padding: 15px 40px;
-        font-size: 18px;
-        border: none;
-        border-radius: 30px;
-        margin: 10px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .yes {
-        background: #ff4d6d;
-        color: white;
-    }
-
-    .yes:hover {
-        background: #ff1e4d;
-        transform: scale(1.1);
-    }
-
-    .no {
-        background: #555;
-        color: white;
-    }
-
-    #message {
-        margin-top: 30px;
-        font-size: 26px;
-        color: #ffd700;
-        display: none;
-    }
-
-    canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-    }
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    text-align:center;
+    color:white;
+}
+.container{
+    margin-top:100px;
+}
+h1{
+    font-size:45px;
+}
+button{
+    padding:15px 40px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    margin:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.yes{
+    background:white;
+    color:#ff4d6d;
+}
+.yes:hover{
+    transform:scale(1.1);
+}
+.no{
+    background:#444;
+    color:white;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
-
-    <h1>Our Special Dinner Date ❤️</h1>
-
-    <!-- Your Couple Photo -->
-<div class="photo">
-    <img src="https://drive.google.com/uc?export=view&id=1q6sbpeO6FqemIlwz8qpLByBcI1ClIdJJ" alt="Our Photo">
+    <h1>Will You Be My Valentine? ❤️</h1>
+    <button class="yes" onclick="goNext()">YES 💖</button>
+    <button class="no" onclick="alert('Only YES allowed 😜')">NO</button>
 </div>
-
-<!-- Restaurant Booking Screenshot -->
-<div class="booking">
-    <h2>Table Booked Just For Us ✨</h2>
-    <img src="https://drive.google.com/uc?export=view&id=17yaSoLmTP-1GrvvteoOaSnY2YX3ZT3aG" alt="Booking Confirmation">
-</div>
-
-
-    <div class="question">
-        Will you go on this romantic dinner date with me? 💖
-    </div>
-
-    <div class="buttons">
-        <button class="yes" onclick="sayYes()">YES</button>
-        <button class="no" onclick="moveNo()">NO</button>
-    </div>
-
-    <div id="message">
-        🎉 YAYYY!! I Love You ❤️ See you at dinner! 💑
-    </div>
-
-</div>
-
-<canvas id="confetti"></canvas>
 
 <script>
-    function sayYes() {
-        document.getElementById("message").style.display = "block";
-        startConfetti();
-    }
-
-    function moveNo() {
-        alert("No option disabled 😜 Only YES works!");
-    }
-
-    // Simple Confetti Effect
-    const canvas = document.getElementById("confetti");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let pieces = [];
-
-    function startConfetti() {
-        for (let i = 0; i < 200; i++) {
-            pieces.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height - canvas.height,
-                size: Math.random() * 10 + 5,
-                speed: Math.random() * 3 + 2,
-                color: `hsl(${Math.random() * 360}, 100%, 50%)`
-            });
-        }
-        requestAnimationFrame(updateConfetti);
-    }
-
-    function updateConfetti() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        pieces.forEach(p => {
-            p.y += p.speed;
-            ctx.fillStyle = p.color;
-            ctx.fillRect(p.x, p.y, p.size, p.size);
-        });
-
-        requestAnimationFrame(updateConfetti);
-    }
+function goNext(){
+    window.location.href = "plan.html";
+}
 </script>
 
 </body>
 </html>
-
